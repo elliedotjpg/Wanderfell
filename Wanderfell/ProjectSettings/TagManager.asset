@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Base
+    uniqueID: 1505425305
+    locked: 0
+  - name: Buttons
+    uniqueID: 3049317919
+    locked: 0
