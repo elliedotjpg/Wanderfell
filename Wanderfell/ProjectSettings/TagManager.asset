@@ -50,3 +50,6 @@ TagManager:
   - name: Panels
     uniqueID: 1303409697
     locked: 0
+  - name: Decor
+    uniqueID: 605736593
+    locked: 0
