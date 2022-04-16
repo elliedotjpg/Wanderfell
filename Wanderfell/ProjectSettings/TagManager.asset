@@ -47,3 +47,6 @@ TagManager:
   - name: Buttons
     uniqueID: 3049317919
     locked: 0
+  - name: Panels
+    uniqueID: 1303409697
+    locked: 0
