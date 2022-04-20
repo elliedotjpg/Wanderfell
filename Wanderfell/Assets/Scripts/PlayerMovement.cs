@@ -13,9 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Animator _animator;
     private int JumpCount;
-    public int Score;
 
-    AudioSource ButtonSFX;
+    //AudioSource ButtonSFX;
 
     private void Start()
     {
@@ -34,19 +33,19 @@ public class PlayerMovement : MonoBehaviour
         {
             _rigidbody.velocity = new Vector2(0, 0);
         }
-        _animator.SetFloat("Run", Mathf.Abs(_rigidbody.velocity.x));
+        _animator.SetFloat("Walk", Mathf.Abs(_rigidbody.velocity.x));
     }
 
     private void PlayerInput()
     {
         transform.parent = null;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A))
         {
             SetMovement(-MovementSpeed, -Mathf.Abs(transform.localScale.x));
         }
 
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.D))
         {
             SetMovement(MovementSpeed, Mathf.Abs(transform.localScale.x));
         }
@@ -58,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         // Jump 
         if ((Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f) || (Input.GetButtonDown("Jump") && JumpCount == 1))
         {
-            SoundManagerScript.PlaySound("jump");
+            //SoundManagerScript.PlaySound("jump");
             JumpCount++;
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
