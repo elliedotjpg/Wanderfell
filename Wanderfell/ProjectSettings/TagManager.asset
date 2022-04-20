@@ -53,6 +53,9 @@ TagManager:
   - name: Decor
     uniqueID: 605736593
     locked: 0
-  - name: Overlaps Kano
+  - name: Player
+    uniqueID: 1898385857
+    locked: 0
+  - name: Overlaps Player
     uniqueID: 3950494745
     locked: 0
