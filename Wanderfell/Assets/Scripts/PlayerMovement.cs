@@ -8,17 +8,19 @@ public class PlayerMovement : MonoBehaviour
     private GameManager gameManager = new GameManager();
 
     public float MovementSpeed = 1;
-    public float JumpForce = 1;
+    //public float JumpForce = 1;
 
     private Rigidbody2D _rigidbody;
     private Animator _animator;
-    private int JumpCount;
+    //private int JumpCount;
+
+    private float jumpHeight = 5f;
 
     //AudioSource ButtonSFX;
 
     private void Start()
     {
-        JumpCount = 0;
+        //JumpCount = 0;
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
     }
@@ -34,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.velocity = new Vector2(0, 0);
         }
         _animator.SetFloat("Walk", Mathf.Abs(_rigidbody.velocity.x));
+        _animator.SetFloat("Jump", Mathf.Abs(_rigidbody.velocity.y));
     }
 
     private void PlayerInput()
@@ -55,18 +58,17 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Jump 
-        if ((Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f) || (Input.GetButtonDown("Jump") && JumpCount == 1))
+        if (Input.GetKeyDown(KeyCode.Space)) //|| (Input.GetKeyDown(KeyCode.Space) && JumpCount == 1))
         {
             //SoundManagerScript.PlaySound("jump");
-            JumpCount++;
-            _rigidbody.velocity = Vector3.zero;
-            _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+            //JumpCount++;
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpHeight);
         }
 
-        if (Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
+        /**if (Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
         {
             JumpCount = 0;
-        }
+        }*/
 
     }
 
