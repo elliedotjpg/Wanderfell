@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/inBetween Scenes/4THInBetween.unity
+- path: Assets/Scenes/Areas/TutorialArea.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
