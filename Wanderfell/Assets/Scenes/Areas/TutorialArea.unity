@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 19186905}
   - component: {fileID: 19186907}
   - component: {fileID: 19186906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,8 +220,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1898385857
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -882,7 +882,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563088175}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.33, y: -6.484, z: 90}
+  m_LocalPosition: {x: 39.96, y: -5.93, z: 90}
   m_LocalScale: {x: 0.2534074, y: 0.25340742, z: 0.25340742}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1061,7 +1061,7 @@ GameObject:
   - component: {fileID: 687473383}
   - component: {fileID: 687473382}
   - component: {fileID: 687473381}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TriggerNextScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1095,7 +1095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5982a08d97875ba42a9e731c1cec9b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 3RDInBetween=
+  sceneName: 3RDInBetween
 --- !u!61 &687473382
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1106,7 +1106,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -4.680951}
@@ -1160,8 +1160,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1898385857
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -1578,7 +1578,7 @@ GameObject:
   - component: {fileID: 1066507859}
   - component: {fileID: 1066507861}
   - component: {fileID: 1066507860}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1664,8 +1664,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1898385857
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -2193,7 +2193,7 @@ GameObject:
   - component: {fileID: 1808494018}
   - component: {fileID: 1808494020}
   - component: {fileID: 1808494019}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UpperBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2279,8 +2279,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -344472551
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
