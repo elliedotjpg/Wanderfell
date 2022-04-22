@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            _rigidbody.velocity = new Vector2(0, 0);
+            _rigidbody.velocity = new Vector2(1, 0);
         }
         _animator.SetFloat("Walk", Mathf.Abs(_rigidbody.velocity.x));
         _animator.SetFloat("Jump", Mathf.Abs(_rigidbody.velocity.y));
@@ -43,14 +43,16 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.parent = null;
 
+        // Move Left
         if (Input.GetKey(KeyCode.A))
         {
-            SetMovement(-MovementSpeed, -Mathf.Abs(transform.localScale.x));
+            SetMovement(-MovementSpeed, Mathf.Abs(transform.localScale.x));
         }
 
+        // Move Right
         else if (Input.GetKey(KeyCode.D))
         {
-            SetMovement(MovementSpeed, Mathf.Abs(transform.localScale.x));
+            SetMovement(MovementSpeed, -Mathf.Abs(transform.localScale.x));
         }
         else
         {
