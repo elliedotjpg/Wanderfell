@@ -7,11 +7,11 @@ public class PlayerMovement : MonoBehaviour
 
     private GameManager gameManager = new GameManager();
 
-    public float MovementSpeed = 1;
+    public float MovementSpeed = 1f;
     //public float JumpForce = 1;
 
-    private Rigidbody2D _rigidbody;
-    private Animator _animator;
+    private Rigidbody2D rb;
+    private Animator animator;
     //private int JumpCount;
 
     private float jumpHeight = 5f;
@@ -21,22 +21,21 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         //JumpCount = 0;
-        _rigidbody = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        MovementSpeed = 3f;
     }
 
     private void Update()
     {
-        if (GameManager.GameState == GameManager.EnumGameState.Playing)
-        {
-            PlayerInput();
-        }
-        else
-        {
-            _rigidbody.velocity = new Vector2(1, 0);
-        }
-        _animator.SetFloat("Walk", Mathf.Abs(_rigidbody.velocity.x));
-        _animator.SetFloat("Jump", Mathf.Abs(_rigidbody.velocity.y));
+        PlayerInput();
+        /**else
+         {
+             rigidbody.velocity = new Vector2(1, 0);
+         }
+        **/
+        animator.SetFloat("isJumping", rb.velocity.y);
+        animator.SetFloat("isWalking", rb.velocity.x); 
     }
 
     private void PlayerInput()
@@ -46,17 +45,17 @@ public class PlayerMovement : MonoBehaviour
         // Move Left
         if (Input.GetKey(KeyCode.A))
         {
-            SetMovement(-MovementSpeed, Mathf.Abs(transform.localScale.x));
+            SetMovement(-MovementSpeed, -Mathf.Abs(transform.localScale.x));
         }
 
-        // Move Right
+
         else if (Input.GetKey(KeyCode.D))
         {
-            SetMovement(MovementSpeed, -Mathf.Abs(transform.localScale.x));
+            SetMovement(MovementSpeed, Mathf.Abs(transform.localScale.x));
         }
         else
         {
-            _rigidbody.velocity = new Vector2(0, _rigidbody.velocity.y);
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
         // Jump 
@@ -64,7 +63,8 @@ public class PlayerMovement : MonoBehaviour
         {
             //SoundManagerScript.PlaySound("jump");
             //JumpCount++;
-            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpHeight);
+            
+            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
         }
 
         /**if (Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void SetMovement(float MovementSpeed, float faceDirection)
     {
-        _rigidbody.velocity = new Vector2(MovementSpeed, _rigidbody.velocity.y);
+        rb.velocity = new Vector2(MovementSpeed, rb.velocity.y);
         transform.localScale = new Vector3(faceDirection, transform.localScale.y, transform.localScale.z);
     }
 }
