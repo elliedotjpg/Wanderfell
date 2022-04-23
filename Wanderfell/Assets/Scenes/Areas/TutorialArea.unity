@@ -1863,8 +1863,8 @@ MonoBehaviour:
   target: {fileID: 563088178}
   yOffset: 2.5
   xOffset: 0
-  startPositionY: -3.883268
-  startPositionX: 4.986029
+  startPositionY: 9.03
+  startPositionX: -6.67
 --- !u!1 &1347054731
 GameObject:
   m_ObjectHideFlags: 0
