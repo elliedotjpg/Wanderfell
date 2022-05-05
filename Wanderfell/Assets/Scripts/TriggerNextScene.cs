@@ -6,13 +6,33 @@ using UnityEngine.SceneManagement;
 public class TriggerNextScene : MonoBehaviour
 {
     public string sceneName;
+    public Animator animator;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public float delayTime = 5f;
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            print("Go To Next Scene!");
+            print("Player has collided with border!");
             SceneManager.LoadScene(sceneName);
+
+            
+            //FadeToLevel();
         }
     }
+
+    public void FadeToLevel()
+    {
+        animator.SetTrigger("FadeOut");
+        Invoke("OnFadeComplete", delayTime);
+        print("Fade complete!");
+    }
+
+    void OnFadeComplete()
+    {  
+        SceneManager.LoadScene(sceneName);
+        print("Scene loaded!");
+    }
+
 }

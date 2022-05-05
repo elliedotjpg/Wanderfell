@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         //JumpCount = 0;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        MovementSpeed = 3f;
+        MovementSpeed = 10f;
     }
 
     private void Update()
@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
          }
         **/
         animator.SetFloat("isJumping", rb.velocity.y);
-        animator.SetFloat("isWalking", rb.velocity.x); 
+        animator.SetFloat("isWalking", rb.velocity.x);
     }
 
     private void PlayerInput()
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         {
             //SoundManagerScript.PlaySound("jump");
             //JumpCount++;
-            
+                                      
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
         }
 
