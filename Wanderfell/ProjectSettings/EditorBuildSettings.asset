@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadGameScreen.unity
     guid: 64359dfb22ff2fb4cb471671bbbde12b
   - enabled: 1
-    path: Assets/Scenes/inBetween Scenes/3RDInBetween.unity
-    guid: b5e4a474abf04ad4884bad30a0a6a1eb
+    path: Assets/Scenes/inBetween Scenes/oneTransition.unity
+    guid: 608afcb5550b6fd4aadd8459d33232a5
   m_configObjects: {}

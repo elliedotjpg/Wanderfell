@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Border
   layers:
   - Default
   - TransparentFX
@@ -58,4 +59,7 @@ TagManager:
     locked: 0
   - name: Overlaps Player
     uniqueID: 3950494745
+    locked: 0
+  - name: FADE
+    uniqueID: 1816743731
     locked: 0
