@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/inBetween Scenes/oneTransition.unity
     guid: 7af1551f63d3c1945a2821f6a987a693
+  - enabled: 1
+    path: Assets/Scenes/Areas/TutorialArea 1.unity
+    guid: 97ff9eda19397d94eb56aaf2ed83f93c
   m_configObjects: {}
