@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/inBetween Scenes/oneTransition.unity
+- path: Assets/Scenes/Areas/TutorialArea 1.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
