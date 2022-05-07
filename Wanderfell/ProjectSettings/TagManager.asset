@@ -7,6 +7,9 @@ TagManager:
   - Border
   - defaultPoint
   - SpawnHere
+  - leftBorder
+  - rightBorder
+  - ErrorPanel
   layers:
   - Default
   - TransparentFX
@@ -50,9 +53,6 @@ TagManager:
   - name: Buttons
     uniqueID: 3049317919
     locked: 0
-  - name: Panels
-    uniqueID: 1303409697
-    locked: 0
   - name: Decor
     uniqueID: 605736593
     locked: 0
@@ -61,6 +61,9 @@ TagManager:
     locked: 0
   - name: Overlaps Player
     uniqueID: 3950494745
+    locked: 0
+  - name: Panels
+    uniqueID: 1303409697
     locked: 0
   - name: FADE
     uniqueID: 1816743731

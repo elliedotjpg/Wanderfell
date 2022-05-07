@@ -7,7 +7,7 @@ public class CameraFollowPlayer : MonoBehaviour
     private Transform target;
 
     public float FollowSpeed = 2f;
-    public float delayTime = 10f;
+    public float delayTime = 3f;
 
     private GameObject player;
     
@@ -17,12 +17,16 @@ public class CameraFollowPlayer : MonoBehaviour
 
     private Vector3 velocity;
 
-    public float moveXOffset = 1f;
-    public float moveYOffset = 1f;
+    public float moveXOffsetToLeft = 1f;
+    public float moveYOffsetToLeft = 1f;
+
+    public float moveXOffsetToRight = 1f;
+    public float moveYOffsetToRight = 1f;
 
     public Collider2D mainCameraCollider;
 
-    private bool detectBorder;
+    private bool detectRightBorder;
+    private bool detectLeftBorder;
 
     void Start()
     {
@@ -45,18 +49,29 @@ public class CameraFollowPlayer : MonoBehaviour
     {
         Invoke("TurnOnCollider", delayTime);
 
-        if (detectBorder == true)
+        target = player.transform;
+
+        if (detectRightBorder == true)
         {
-            Vector3 movePos = new Vector3(target.position.x + moveXOffset, target.position.y + moveYOffset, -5f);
-            print(target.position.x);
-            Debug.Log("Moving X Offset!");
+            Vector3 movePos = new Vector3(target.position.x + moveXOffsetToLeft, target.position.y + moveYOffsetToLeft, -5f);
+
+            Debug.Log("Moving X Offset to the LEFT!");
 
             transform.position = Vector3.Slerp(transform.position, movePos, FollowSpeed * Time.deltaTime);
         }
+            
+        if (detectLeftBorder == true)
+        { 
+
+            Vector3 hitLeftBorderPos = new Vector3(target.position.x + moveXOffsetToRight, target.position.y + moveYOffsetToRight, -5f);
+
+            Debug.Log("Moving X Offset to the RIGHT!");
+
+            transform.position = Vector3.Slerp(transform.position, hitLeftBorderPos, FollowSpeed * Time.deltaTime);
+        }
+
         else
         {
-            target = player.transform;
-
             Vector3 newPos = new Vector3(target.position.x + xOffset, target.position.y + yOffset, -5f);
             transform.position = Vector3.Slerp(transform.position, newPos, FollowSpeed * Time.deltaTime);
         }
@@ -75,10 +90,19 @@ public class CameraFollowPlayer : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.tag == "Border")
+        if (collision.gameObject.tag == "rightBorder")
         {
-            detectBorder = true;
-            print("Border reached!");
+            detectRightBorder = true;
+            print("Right border reached!");
+        }
+
+        else
+        {
+            if (collision.gameObject.tag == "leftBorder")
+            {
+                detectLeftBorder = true;
+                Debug.Log("Left border reached!");
+            }
         }
     }
 }

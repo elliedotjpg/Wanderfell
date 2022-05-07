@@ -15,7 +15,6 @@ public class SpawnPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         GameObject playerInstance = Instantiate(playerPrefab);
         Debug.Log("Player prefab instance created!");
         playerInstance.transform.position = transform.position + new Vector3(transformPositionX, transformPositionY);
