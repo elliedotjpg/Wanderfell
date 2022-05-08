@@ -37,11 +37,16 @@ public class PauseManager : MonoBehaviour
             
     }
 
-    void PauseGameWithButton()
+    public void PauseGameWithButton()
     {
-        pausePanel.SetActive(true);
-        Time.timeScale = 0f;
-        Debug.Log("Game PAUSED!");
+        if (pausePanel != null)
+        {
+            bool isActive = pausePanel.activeSelf;
+            pausePanel.SetActive(!isActive);
+            pausePanel.SetActive(true);
+            Time.timeScale = 0f;
+            Debug.Log("Game PAUSED!");
+        }
     }
 
     public void UnpauseGame()
