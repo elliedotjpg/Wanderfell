@@ -25,15 +25,15 @@ public class PlayerMovement : MonoBehaviour
 
     Canvas errorPopUp;
     [SerializeField] private GameObject errorPopUpPrefab;
+
     public float delayTime = 2f;
 
     public float popUpTransformPositionX;
     public float popUpTransformPositionY;
 
     //public Camera cameraToUse;
-    private GameObject destroyPopup;
     private GameObject errorInstance;
-
+ 
 
     private void Start()
     {
@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        destroyPopup = GameObject.FindWithTag("ErrorPanel");
+        //destroyPopup = GameObject.FindWithTag("ErrorPanel");
         
     }
 
@@ -87,7 +87,11 @@ public class PlayerMovement : MonoBehaviour
                 errorPopUp = errorInstance.GetComponent<Canvas>();
 
                 errorPopUp.worldCamera = cameraToUse;
+
                 Invoke("destroyInstance", delayTime);
+                //int popUpCount = destroyPopUp.Length;
+
+
             }
             else if (Input.GetKey(KeyCode.D))
             {
@@ -133,8 +137,15 @@ public class PlayerMovement : MonoBehaviour
 
     void destroyInstance()
     {
-        Destroy(errorInstance);
-        Debug.Log("Pop up destroyed!");
+        GameObject[] popUpInstances = GameObject.FindGameObjectsWithTag("ErrorPanel");
+
+        foreach (GameObject popUpInstance in popUpInstances)
+        {
+            Destroy(popUpInstance);
+        }
+
+        
+        Debug.Log("Pop up clones destroyed!");
     }
 
     private void SetMovement(float MovementSpeed, float faceDirection)
