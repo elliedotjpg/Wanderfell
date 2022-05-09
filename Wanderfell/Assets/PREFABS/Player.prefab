@@ -157,8 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38db5c85f8cb3ea42afcf868332a7f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldCamera: {fileID: 4576300277544545600, guid: 68f4d3c6e44f03d49935a3d0fce9651c, type: 3}
   MovementSpeed: 10
   errorPopUpPrefab: {fileID: 8896521337055871576, guid: ee241d407bd0bb54c837d30a340182af, type: 3}
+  delayTime: 2
   popUpTransformPositionX: 0
   popUpTransformPositionY: 0

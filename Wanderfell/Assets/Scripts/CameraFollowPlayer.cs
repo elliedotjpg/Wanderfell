@@ -1,6 +1,7 @@
-                                            using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class CameraFollowPlayer : MonoBehaviour
 {
@@ -28,16 +29,20 @@ public class CameraFollowPlayer : MonoBehaviour
     private bool detectRightBorder;
     private bool detectLeftBorder;
 
+    Scene activeScene;
+    private string sceneName;
+
     void Start()
     {
-
+        activeScene = SceneManager.GetActiveScene();
+        sceneName = activeScene.name;
     }
 
     void FixedUpdate()
     {
         if (player!= null) {
             return;
-         }
+        }
 
         player = GameObject.FindWithTag("Player");
         Debug.Log("Game object with specified tag has been found!");
@@ -51,23 +56,29 @@ public class CameraFollowPlayer : MonoBehaviour
 
         target = player.transform;
 
-        if (detectRightBorder == true)
+
+        if ((sceneName == "oneTransition 1") || (sceneName == "twoTransition"))
         {
-            Vector3 movePos = new Vector3(target.position.x + moveXOffsetToLeft, target.position.y + moveYOffsetToLeft, -5f);
+            if (detectRightBorder == true)
+            {
+                Vector3 movePos = new Vector3(target.position.x + moveXOffsetToLeft, target.position.y + moveYOffsetToLeft, -5f);
 
-            Debug.Log("Moving X Offset to the LEFT!");
+                Debug.Log("Moving X Offset to the LEFT!");
 
-            transform.position = Vector3.Slerp(transform.position, movePos, FollowSpeed * Time.deltaTime);
+                transform.position = Vector3.Slerp(transform.position, movePos, FollowSpeed * Time.deltaTime);
+            }
         }
-            
-        if (detectLeftBorder == true)
-        { 
 
-            Vector3 hitLeftBorderPos = new Vector3(target.position.x + moveXOffsetToRight, target.position.y + moveYOffsetToRight, -5f);
+        if ((sceneName == "threeTransition") || (sceneName == "fourTransition"))
+        {
+            if (detectRightBorder == true)
+            {
+                Vector3 movePos = new Vector3(target.position.x + moveXOffsetToLeft, target.position.y + moveYOffsetToLeft, -5f);
 
-            Debug.Log("Moving X Offset to the RIGHT!");
+                Debug.Log("Moving X Offset to the LEFT!");
 
-            transform.position = Vector3.Slerp(transform.position, hitLeftBorderPos, FollowSpeed * Time.deltaTime);
+                transform.position = Vector3.Slerp(transform.position, movePos, FollowSpeed * Time.deltaTime);
+            }
         }
 
         else
@@ -104,5 +115,6 @@ public class CameraFollowPlayer : MonoBehaviour
                 Debug.Log("Left border reached!");
             }
         }
+
     }
 }

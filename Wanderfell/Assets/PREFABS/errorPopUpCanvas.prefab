@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5527553343718404405}
   - component: {fileID: 8859707333608762273}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: emptyRectangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5800194699231305545}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 458, z: -33172.215}
+  m_LocalPosition: {x: 0, y: 418, z: -33172.215}
   m_LocalScale: {x: 30.661081, y: 19.219809, z: 110.57405}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -119,7 +119,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -600, y: -500}
+  m_AnchoredPosition: {x: 0, y: 413.2}
   m_SizeDelta: {x: 4992.01, y: 178.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7940650858558676971
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.53333336, g: 0.48235297, b: 0.45882356, a: 1}
+  m_Color: {r: 0.4245283, g: 0.39818785, b: 0.38648096, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -157,7 +157,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 300
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -291,7 +291,7 @@ Canvas:
   m_GameObject: {fileID: 8896521337055871576}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -301,7 +301,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: -344472551
-  m_SortingOrder: 0
+  m_SortingOrder: 8
   m_TargetDisplay: 0
 --- !u!114 &8896521337055871574
 MonoBehaviour:
