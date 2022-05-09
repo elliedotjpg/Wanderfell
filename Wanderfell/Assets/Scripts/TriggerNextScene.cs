@@ -16,11 +16,10 @@ public class TriggerNextScene : MonoBehaviour
         {
             print("Player has collided with border!");
             //SceneManager.LoadScene(sceneName);
-     
             FadeToLevel();
         }
-    }
 
+    }
     public void FadeToLevel()
     {
         animator.SetTrigger("FadeOut");
@@ -29,7 +28,7 @@ public class TriggerNextScene : MonoBehaviour
     }
 
     void OnFadeComplete()
-    {     
+    {
         SceneManager.LoadScene(sceneName);
         print("Scene loaded!");
     }

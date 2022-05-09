@@ -8,25 +8,25 @@ public class LoadScene : MonoBehaviour
     public string sceneName;
     public Animator animator;
 
-    public float delayTime = 5f;
-
-    int notes = 0;
+    public float delayTime = 3f;
 
     void ClickButton()
     {
-        if (notes == 3)
-        {
-            Invoke("DelayedAction", delayTime);
-        }
+        FadeToLevel();
+
     }
 
-    public void DelayedAction()
-    {
-        SceneManager.LoadScene(sceneName);
-    }
-
-    public void FadeOut()
+    public void FadeToLevel()
     {
         animator.SetTrigger("FadeOut");
+        Invoke("OnFadeComplete", delayTime);
+        print("Fade complete!");
+        
+    }
+
+    public void OnFadeComplete()
+    {
+        SceneManager.LoadScene(sceneName);
+        print("Scene loading!");
     }
 }

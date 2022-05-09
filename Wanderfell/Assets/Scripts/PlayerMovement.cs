@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     Canvas errorPopUp;
     [SerializeField] private GameObject errorPopUpPrefab;
 
-    public float delayTime = 2f;
+    public float delayTime = 3f;
 
     public float popUpTransformPositionX;
     public float popUpTransformPositionY;
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         transform.parent = null;
 
         // Move Left
-        if ((sceneName == "oneTransition") || (sceneName == "twoTransition"))
+        if ((sceneName == "oneTransition 1") || (sceneName == "twoTransition"))
         {
             Debug.Log("Transition scene confirmed!");
 
@@ -152,5 +152,15 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(MovementSpeed, rb.velocity.y);
         transform.localScale = new Vector3(faceDirection, transform.localScale.y, transform.localScale.z);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("stopPlayerHere"))
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+            MovementSpeed = 0;
+            Debug.Log("Player will now stop here.");
+        }
     }
 }
