@@ -53,6 +53,7 @@ public class CameraFollowPlayer : MonoBehaviour
     void LateUpdate()
     {
         Invoke("TurnOnCollider", delayTime);
+        Debug.Log("Camera collider activated!");
 
         target = player.transform;
 
@@ -67,9 +68,34 @@ public class CameraFollowPlayer : MonoBehaviour
 
                 transform.position = Vector3.Slerp(transform.position, movePos, FollowSpeed * Time.deltaTime);
             }
+
+            else
+            {
+                Vector3 newPos = new Vector3(target.position.x + xOffset, target.position.y + yOffset, -5f);
+                transform.position = Vector3.Slerp(transform.position, newPos, FollowSpeed * Time.deltaTime);
+            }
         }
 
-        if ((sceneName == "threeTransition") || (sceneName == "fourTransition"))
+        else if ((sceneName == "threeTransition") || (sceneName == "fourTransition"))
+        {
+            Debug.Log("three or fourTransition detected!");
+            if (detectRightBorder == true)
+            {
+                Vector3 movePos = new Vector3(target.position.x + moveXOffsetToLeft, target.position.y + moveYOffsetToLeft, -5f);
+
+                Debug.Log("Moving X Offset to the LEFT!");
+
+                transform.position = Vector3.Slerp(transform.position, movePos, FollowSpeed * Time.deltaTime);
+            }
+
+            else
+            {
+                Vector3 newPos = new Vector3(target.position.x + xOffset, target.position.y + yOffset, -5f);
+                transform.position = Vector3.Slerp(transform.position, newPos, FollowSpeed * Time.deltaTime);
+            }
+        }
+
+        else
         {
             if (detectRightBorder == true)
             {
@@ -79,12 +105,13 @@ public class CameraFollowPlayer : MonoBehaviour
 
                 transform.position = Vector3.Slerp(transform.position, movePos, FollowSpeed * Time.deltaTime);
             }
-        }
+            else
+            {
+                Vector3 newPos = new Vector3(target.position.x + xOffset, target.position.y + yOffset, -5f);
+                transform.position = Vector3.Slerp(transform.position, newPos, FollowSpeed * Time.deltaTime);
+            }
 
-        else
-        {
-            Vector3 newPos = new Vector3(target.position.x + xOffset, target.position.y + yOffset, -5f);
-            transform.position = Vector3.Slerp(transform.position, newPos, FollowSpeed * Time.deltaTime);
+
         }
     }
 

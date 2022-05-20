@@ -12,8 +12,10 @@ public class PlayerMovement : MonoBehaviour
     Scene activeScene;
     Camera worldCamera;
 
+    [SerializeField] private GroundDetector GroundDetector;
+
     public float MovementSpeed = 1f;
-    //public float JumpForce = 1;
+    public float JumpForce = 1;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -31,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public float popUpTransformPositionX;
     public float popUpTransformPositionY;
 
-    //public Camera cameraToUse;
+    public GameObject activeDialogue;
     private GameObject errorInstance;
  
 
@@ -45,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         activeScene = SceneManager.GetActiveScene();
         sceneName = activeScene.name;
 
+
         //errorPanel = GameObject.Find("errorPopUpPanel");
         //Debug.Log("Found error panel!");
         //print("Error Panel = " + errorPanel);
@@ -53,26 +56,23 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         PlayerInput();
-        /**else
-         {
-             rigidbody.velocity = new Vector2(1, 0);
-         }
-        **/
+
         animator.SetFloat("isJumping", rb.velocity.y);
         animator.SetFloat("isWalking", rb.velocity.x);
     }
 
     private void FixedUpdate()
     {
-        //destroyPopup = GameObject.FindWithTag("ErrorPanel");
-        
+        activeDialogue = GameObject.FindWithTag("Dialogue");
+
     }
 
     private void PlayerInput()
     {
         transform.parent = null;
 
-        // Move Left
+        // ------------------------------------ IF TRANSITION SCENE FOR PLAYERMOVEMENT ------------------------------------
+
         if ((sceneName == "oneTransition 1") || (sceneName == "twoTransition"))
         {
             Debug.Log("Transition scene confirmed!");
@@ -102,6 +102,159 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(0, rb.velocity.y);
             }
         }
+
+        else if ((sceneName == "threeTransition") || (sceneName == "fourTransition"))
+        {
+            Debug.Log("Transition scene confirmed!");
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                errorInstance = Instantiate(errorPopUpPrefab);
+                Debug.Log("Error pop up instance created!");
+                errorInstance.transform.position = transform.position + new Vector3(popUpTransformPositionX, popUpTransformPositionY);
+
+                Camera cameraToUse = Camera.main;
+                errorPopUp = errorInstance.GetComponent<Canvas>();
+
+                errorPopUp.worldCamera = cameraToUse;
+
+                Invoke("destroyInstance", delayTime);
+                //int popUpCount = destroyPopUp.Length;
+
+
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                SetMovement(MovementSpeed, Mathf.Abs(transform.localScale.x));
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
+        }
+
+        else if ((sceneName == "fiveTransition") || (sceneName == "sixTransition"))
+        {
+            Debug.Log("Transition scene confirmed!");
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                errorInstance = Instantiate(errorPopUpPrefab);
+                Debug.Log("Error pop up instance created!");
+                errorInstance.transform.position = transform.position + new Vector3(popUpTransformPositionX, popUpTransformPositionY);
+
+                Camera cameraToUse = Camera.main;
+                errorPopUp = errorInstance.GetComponent<Canvas>();
+
+                errorPopUp.worldCamera = cameraToUse;
+
+                Invoke("destroyInstance", delayTime);
+                //int popUpCount = destroyPopUp.Length;
+
+
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                SetMovement(MovementSpeed, Mathf.Abs(transform.localScale.x));
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
+        }
+
+        else if ((sceneName == "sevenTransition") || (sceneName == "eightTransition"))
+        {
+            Debug.Log("Transition scene confirmed!");
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                errorInstance = Instantiate(errorPopUpPrefab);
+                Debug.Log("Error pop up instance created!");
+                errorInstance.transform.position = transform.position + new Vector3(popUpTransformPositionX, popUpTransformPositionY);
+
+                Camera cameraToUse = Camera.main;
+                errorPopUp = errorInstance.GetComponent<Canvas>();
+
+                errorPopUp.worldCamera = cameraToUse;
+
+                Invoke("destroyInstance", delayTime);
+                //int popUpCount = destroyPopUp.Length;
+
+
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                SetMovement(MovementSpeed, Mathf.Abs(transform.localScale.x));
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
+        }
+
+        else if ((sceneName == "nineTransition") || (sceneName == "tenTransition"))
+        {
+            Debug.Log("Transition scene confirmed!");
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                errorInstance = Instantiate(errorPopUpPrefab);
+                Debug.Log("Error pop up instance created!");
+                errorInstance.transform.position = transform.position + new Vector3(popUpTransformPositionX, popUpTransformPositionY);
+
+                Camera cameraToUse = Camera.main;
+                errorPopUp = errorInstance.GetComponent<Canvas>();
+
+                errorPopUp.worldCamera = cameraToUse;
+
+                Invoke("destroyInstance", delayTime);
+                //int popUpCount = destroyPopUp.Length;
+
+
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                SetMovement(MovementSpeed, Mathf.Abs(transform.localScale.x));
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
+        }
+
+        else if ((sceneName == "elevenTransition") || (sceneName == "twelveTransition"))
+        {
+            Debug.Log("Transition scene confirmed!");
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                errorInstance = Instantiate(errorPopUpPrefab);
+                Debug.Log("Error pop up instance created!");
+                errorInstance.transform.position = transform.position + new Vector3(popUpTransformPositionX, popUpTransformPositionY);
+
+                Camera cameraToUse = Camera.main;
+                errorPopUp = errorInstance.GetComponent<Canvas>();
+
+                errorPopUp.worldCamera = cameraToUse;
+
+                Invoke("destroyInstance", delayTime);
+                //int popUpCount = destroyPopUp.Length;
+
+
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                SetMovement(MovementSpeed, Mathf.Abs(transform.localScale.x));
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
+        }
+
+        // ------------------------------------ ELSE (IF) NOT TRANSITION SCENE FOR PLAYERMOVEMENT ------------------------------------
+
         else
         {
             if (Input.GetKey(KeyCode.A))
@@ -112,26 +265,37 @@ public class PlayerMovement : MonoBehaviour
             {
                 SetMovement(MovementSpeed, Mathf.Abs(transform.localScale.x));
             }
+            //else if (PlayerInput().GetKey(KeyCode.Return));
             else
             {
                 rb.velocity = new Vector2(0, rb.velocity.y);
             }
 
         }
-            
+
         // Jump 
         if (Input.GetKeyDown(KeyCode.Space)) //|| (Input.GetKeyDown(KeyCode.Space) && JumpCount == 1))
         {
             //SoundManagerScript.PlaySound("jump");
             //JumpCount++;
-                                      
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+
+            if(GroundDetector.IsGrounded())
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+                rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+            }
+            
         }
 
         /**if (Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
         {
             JumpCount = 0;
         }*/
+
+        else if (activeDialogue != null)
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
 
     }
 

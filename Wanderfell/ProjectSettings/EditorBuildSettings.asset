@@ -9,12 +9,57 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/inBetween Scenes/twoTransition.unity
-    guid: 7af1551f63d3c1945a2821f6a987a693
-  - enabled: 1
     path: Assets/Scenes/Areas/TutorialArea.unity
     guid: 97ff9eda19397d94eb56aaf2ed83f93c
   - enabled: 1
     path: Assets/Scenes/inBetween Scenes/oneTransition 1.unity
     guid: b8c32715ea2eaba48ac4138a6b3016f4
+  - enabled: 1
+    path: Assets/Scenes/inBetween Scenes/twoTransition.unity
+    guid: 619595e0865a1094d8fefb8ffcdd2d02
+  - enabled: 1
+    path: Assets/Scenes/inBetween Scenes/threeTransition.unity
+    guid: 7af1551f63d3c1945a2821f6a987a693
+  - enabled: 1
+    path: Assets/Scenes/inBetween Scenes/fourTransition.unity
+    guid: f8984861f5fc5d3459f59dae0e23c9d6
+  - enabled: 1
+    path: Assets/Scenes/inBetween Scenes/fiveTransition.unity
+    guid: a4584cd9c605efe4283a85413a76bee3
+  - enabled: 1
+    path: Assets/Scenes/inBetween Scenes/sixTransition.unity
+    guid: 6f9020f1b33430b40a7f840dd3da9f57
+  - enabled: 1
+    path: Assets/Scenes/inBetween Scenes/sevenTransition.unity
+    guid: 0b75068f69424404bb8ea483daade22d
+  - enabled: 1
+    path: Assets/Scenes/inBetween Scenes/eightTransition.unity
+    guid: b93d0313ffe7d3542acb6dcb753e7462
+  - enabled: 1
+    path: Assets/Scenes/inBetween Scenes/nineTransition.unity
+    guid: cdc35c84b900e1b43a02481ede7a13b3
+  - enabled: 1
+    path: Assets/Scenes/inBetween Scenes/tenTransition.unity
+    guid: b271aaf91640d3f44b973cda287711c7
+  - enabled: 1
+    path: Assets/Scenes/inBetween Scenes/elevenTransition.unity
+    guid: 2978a426f781f3243b2b7e778e43b651
+  - enabled: 1
+    path: Assets/Scenes/inBetween Scenes/twelveTransition.unity
+    guid: 289b5ab0463defe4a8fed2d38f6e11d0
+  - enabled: 1
+    path: Assets/Scenes/Areas/barArea.unity
+    guid: 8f40c3b7bb0af9a4baa9fd049b3e1288
+  - enabled: 1
+    path: Assets/Scenes/Areas/sidewalkArea.unity
+    guid: 0245d4f20b67ec74cbe8198608ad5589
+  - enabled: 1
+    path: Assets/Scenes/Areas/House.unity
+    guid: d8d42244f3701934f8b2e2c6216cfac9
+  - enabled: 1
+    path: Assets/Scenes/Areas/playgroundArea.unity
+    guid: e7dfde338e255f94abed19e0a2d38697
+  - enabled: 1
+    path: Assets/Scenes/Areas/thePit.unity
+    guid: 04331781aa4115a4bbf79b1cf06ce238
   m_configObjects: {}

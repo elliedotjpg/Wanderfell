@@ -98,11 +98,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5e377b71b37604eb1f04f822223d10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothTime: 0.3
+  FollowSpeed: 2
+  delayTime: 10
   xOffset: 0
   yOffset: 2.5
   zConstant: 200
-  moveXOffset: 5
+  moveXOffsetToLeft: 1
+  moveYOffsetToLeft: 1
+  moveXOffsetToRight: 1
+  moveYOffsetToRight: 1
+  mainCameraCollider: {fileID: 0}
 --- !u!61 &4576300277544545605
 BoxCollider2D:
   m_ObjectHideFlags: 0
